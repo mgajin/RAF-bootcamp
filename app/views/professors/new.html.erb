@@ -1,0 +1,40 @@
+<br>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><%= link_to "Admin", admin_path %></li>
+        <li class="breadcrumb-item"><%= link_to "Professors", admin_path %></li>
+        <li class="breadcrumb-item active" aria-current="page">New</li>
+    </ol>
+</nav>
+
+<%= form_for :professor, url: professors_path do |f| %>
+<% if @professor.errors.any? %>
+<% @professor.errors.full_messages.each do |msg| %>
+<div class="alert alert-danger">
+    <%= msg %>
+</div>
+<% end %>
+<% end %>
+<div class="card">
+    <div class="card-body">
+        <h1 class="card-title text-center">New Professor</h1>
+        <div class="container">
+            <div class="row pt-1 pb-1">
+                <div class="col-12 mt-1 mb-1">
+                    <%= f.label :first_name %>
+                    <br>
+                    <%= f.text_field(:first_name, {:class => 'form-control m-0'}) %>
+                </div>
+                <div class="col-12 mt-1 mb-1">
+                    <%= f.label :last_name %>
+                    <br>
+                    <%= f.text_field(:last_name, {:class => 'form-control'}) %>
+                </div>
+                <div class="col-12 mt-1 mb-1">
+                    <%= f.submit({:class => 'btn btn-primary'}) %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<% end %>

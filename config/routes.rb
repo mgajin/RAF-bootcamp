@@ -1,3 +1,13 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+ 
+  root 'pages#index', as: 'home'
+
+  get 'admin' => 'pages#admin', as: 'admin'
+  get 'users/login' => 'users#login', as: 'login'
+  get 'users/signup' => 'users#signup', as: 'signup'
+
+  resources :users
+  resources :courses
+  resources :professors
+
 end
