@@ -1,1 +1,12 @@
-<h1><%= @title %></h1>
+<section class="container">
+    <h1>Courses</h1>
+    <%= render  "courses/courses" %>
+    <br>
+    <%= link_to "SEE ALL COURSES", courses_path, :class => 'btn btn-danger', :style => 'width: 100%;' %>
+</section>
+<br>
+<section class="container">
+    <h1>Professors</h1>
+    <%= render  "professors/professors" %>
+    <br>
+</section>

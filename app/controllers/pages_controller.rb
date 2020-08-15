@@ -1,8 +1,8 @@
 class PagesController < ApplicationController
 
     def index
-        @title = 'Home'
         @courses = Course.all
+        @professors = Professor.all
     end
 
     def admin

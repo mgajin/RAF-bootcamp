@@ -17,6 +17,17 @@ class CoursesController < ApplicationController
         @professor = Professor.find(params[:professor_id])
         @course = @professor.courses.create(course_params)
         
+        if @course
+            redirect_to admin_path
+        else 
+            render 'new'
+        end
+    end
+
+    def destroy
+        @course = Course.find(params[:id])
+        @course.destroy
+
         redirect_to admin_path
     end
 
