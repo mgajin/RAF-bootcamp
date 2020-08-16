@@ -50,3 +50,9 @@
         margin: .5em 0;
     }
 }
+
+.link {
+    &:hover {
+        text-decoration: none;
+    }
+}
