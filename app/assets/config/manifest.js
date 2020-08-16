@@ -1,2 +1,3 @@
-//= link_tree ../images
-//= link_directory ../stylesheets .css
+image_path("../images")
+    //= link application.css
+    //= link application.js
