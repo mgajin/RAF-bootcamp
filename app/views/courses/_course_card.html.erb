@@ -1,7 +1,7 @@
 <div class="card">
     <h1 class="course-header"><i class="fas fa-laptop-code"></i></h1>
     <div class="card-body">
-        <h3 class="card-title"><%= @course.name %></h3>
+        <h4 class="card-title"><%= @course.name %></h4>
         <p class="card-text"><%= link_to "#{@course.professor.first_name} #{@course.professor.last_name}", professor_path(@course.professor), :class => 'link' %></p>
         <button class="btn btn-danger">Save course</button>
     </div>
