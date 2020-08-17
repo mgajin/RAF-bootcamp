@@ -1,1 +1,24 @@
-<%= @professor.first_name %>
+<div class="profile">
+    <div class="bg-img"></div>
+    <div class="overlay">
+        <div class="container">
+            <div class="card" id="profile-card">
+                <h1><%= @professor.first_name[0] + @professor.last_name[0] %></h1>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="profile-info">
+            <h3><%= "#{@professor.first_name} #{@professor.last_name}" %></h3>
+            <p><i class="fas fa-envelope"></i> professor@raf.rs</p>
+        </div>
+        <ul class="list-group">
+            <% @professor.courses.each do |course| %>
+            <li class="list-group-item">
+                <%= link_to "#{course.name}", course_path(course), :class => 'link' %>
+            </li>
+            <% end %>
+        </ul>
+    </div>
+</div>
+<br>

@@ -1,3 +1,46 @@
-// Place all the styles related to the Professors controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+@import 'colors';
+.profile {
+    .bg-img {
+        height: 40vh;
+        background-image: none;
+        background-color: $accent;
+    }
+    .list-group-item {
+        border: none;
+    }
+}
+
+.profile-info {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    .link {
+        color: $primary;
+    }
+    &::after {
+        display: block;
+        content: '';
+        width: 100%;
+        height: 1px;
+        background-color: rgba(0, 0, 0, 0.1);
+        margin: .5em 0;
+    }
+}
+
+#profile-card {
+    &.card {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        margin: 0;
+        font-size: 4em;
+    }
+}
