@@ -1,9 +1,18 @@
-<section class="container">
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <button class="btn btn-dark" type="button" id="button-addon1"><i class="fas fa-search"></i></button>
+<div id="courses">
+    <div class="bg-img"></div>
+    <div class="card">
+        <div class="card-body">
+            <form action="/courses" method="GET">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-search"></i></span>
+                    </div>
+                    <input type="text" name="name" class="form-control" placeholder="Filter by course name or professor">
+                </div>
+            </form>
         </div>
-        <input type="text" class="form-control" placeholder="Search courses" aria-label="Search" aria-describedby="basic-addon1">
     </div>
+</div>
+<div class="container">
     <%= render  "courses/courses" %>
-</section>
+</div>

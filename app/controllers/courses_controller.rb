@@ -1,6 +1,11 @@
 class CoursesController < ApplicationController
     def index
-        @courses = Course.all
+        @course_name = params[:name] 
+        if @course_name
+            @courses = Course.all.select { |course| course.name.include? @course_name }
+        else
+            @courses = Course.all            
+        end
     end
 
     def show
@@ -31,7 +36,8 @@ class CoursesController < ApplicationController
         redirect_to admin_path
     end
 
-    private def course_params
-        params.require(:course).permit(:name)
-    end
+    private 
+        def course_params
+            params.require(:course).permit(:name)
+        end
 end

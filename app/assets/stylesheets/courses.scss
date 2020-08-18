@@ -1,4 +1,12 @@
 @import 'colors';
+#courses {
+    .bg-img {
+        height: 40vh;
+        background-image: none;
+        background-color: $accent;
+    }
+}
+
 #course {
     text-align: center;
     .btn {
