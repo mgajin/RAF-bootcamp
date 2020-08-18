@@ -64,3 +64,11 @@
         }
     }
 }
+
+#admin {
+    .card {
+        &:hover {
+            box-shadow: none;
+        }
+    }
+}

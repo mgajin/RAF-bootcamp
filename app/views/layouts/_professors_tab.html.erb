@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row pt-1 pb-1">
+        <div class="col-12 p-2 d-flex justify-content-between">
+            <h3 class="m-0">Total: <%= @professors.length %></h3>
+            <%= link_to "Add New", new_professor_path, :class => 'btn btn-info' %>
+        </div>
+        <% @professors.each do |professor| %>
+        <div class="col-12 col-lg-6 p-2">
+            <div class="card h-100">
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <h5 class="card-title"><%= "#{professor.first_name} #{professor.last_name}" %></h5>
+                        <p class="card-text">
+                            Courses:
+                            <% professor.courses.each do |course| %>
+                            <%= "#{course.name} " %>
+                            <% end %>
+                        </p>
+                    </div>
+                    <div class="d-flex flex-column align-items-center justify-content-between">
+                        <%= link_to professor_path(professor), :class => 'link' do %>
+                        <i class="fas fa-info-circle"></i>
+                        <% end %>
+                        <%= link_to professor_path(professor),:class => 'link', method: :delete, data: { confirm: 'Are you sure?' } do %>
+                        <i class="fas fa-trash text-danger"></i>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% end %>
+    </div>
+</div>
