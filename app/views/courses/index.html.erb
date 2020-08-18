@@ -1,13 +1,15 @@
 <div id="courses">
-    <div class="bg-img"></div>
-    <div class="card">
-        <div class="card-body">
-            <form action="/courses" method="GET">
-                <div class="input-group mb-3">
+    <div class="bg-img">
+        <span class="bg-icon"><i class="fas fa-laptop-code"></i></span>
+    </div>
+    <div class="overlay">
+        <div class="card" id="search-card">
+            <form action="/courses" method="GET" id="search-form">
+                <div class="input-group h-100">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-search"></i></span>
                     </div>
-                    <input type="text" name="name" class="form-control" placeholder="Filter by course name or professor">
+                    <input type="text" name="name" class="form-control h-100" placeholder="Search">
                 </div>
             </form>
         </div>

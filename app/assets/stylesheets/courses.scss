@@ -4,6 +4,36 @@
         height: 40vh;
         background-image: none;
         background-color: $accent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.bg-icon {
+    font-size: 5em;
+    color: rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    &#search-card {
+        width: 100%;
+        position: relative;
+        top: -25px;
+        margin: 0 1em;
+        span {
+            background: none;
+            border: none;
+        }
+        i {
+            color: $red;
+        }
+        input {
+            border: none;
+        }
+        #search-form {
+            height: 50px;
+        }
     }
 }
 
