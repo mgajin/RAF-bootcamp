@@ -24,6 +24,10 @@ module SessionsHelper
         redirect_to home_path unless logged_in?
     end
 
+    def admin_auth
+        http_basic_authenticate_or_request_with name: "admin", password: "admin" 
+    end
+
     def forget(user)
         user.forget
         cookies.delete(:user_id)

@@ -1,4 +1,6 @@
 class CoursesController < ApplicationController
+    before_action :admin_auth, only: [:new, :create, :destroy]
+
     def index
         @course_name = params[:name] 
         if @course_name

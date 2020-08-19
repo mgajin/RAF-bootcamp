@@ -1,6 +1,5 @@
 class PagesController < ApplicationController
-
-    # skip_before_action :authorized, only: [:index]
+    before_action :admin_auth, only: [:admin]
 
     def index
         @courses = Course.all

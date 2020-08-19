@@ -1,3 +1,29 @@
 <div class="container">
-
+    <div class="row pt-1 pb-1">
+        <div class="col-12 p-2 d-flex justify-content-between">
+            <h3 class="m-0">Total: <%= @users.length %></h3>
+        </div>
+        <% @users.each do |user| %>
+        <div class="col-12 col-lg-6 p-2">
+            <div class="card h-100">
+                <div class="card-body d-flex justify-content-between">
+                    <div>
+                        <h5 class="card-title"><%= "#{user.first_name} #{user.last_name}" %></h5>
+                        <p class="card-text">
+                            Index: <%= "#{user.username}#{user.id}" %>
+                        </p>
+                    </div>
+                    <div class="d-flex flex-column align-items-center justify-content-between">
+                        <%= link_to user_path(user), :class => 'link' do %>
+                        <i class="fas fa-info-circle"></i>
+                        <% end %>
+                        <%= link_to user_path(user),:class => 'link', method: :delete, data: { confirm: 'Are you sure?' } do %>
+                        <i class="fas fa-trash text-danger"></i>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% end %>
+    </div>
 </div>

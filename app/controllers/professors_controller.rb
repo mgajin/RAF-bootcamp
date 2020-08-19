@@ -1,4 +1,6 @@
 class ProfessorsController < ApplicationController
+    before_action :admin_auth, only: [:new, :create, :destroy]
+
     def index
         @professors = Professor.all
     end
