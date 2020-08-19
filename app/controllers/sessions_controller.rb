@@ -1,7 +1,5 @@
 class SessionsController < ApplicationController
 
-    # skip_before_action :authorized, only: [:new, :create]
-
     def new
     end
 
@@ -18,9 +16,9 @@ class SessionsController < ApplicationController
         end
     end
 
-    # def destroy 
-    #     log_out
-    #     redirect_to home_path
-    # end
+    def destroy 
+        log_out
+        redirect_to home_path
+    end
 
 end

@@ -1,0 +1,17 @@
+<div class="profile">
+    <div class="bg-img"></div>
+    <div class="overlay">
+        <div class="container">
+            <div class="card" id="profile-card">
+                <h1><%= @user.first_name[0] + @user.last_name[0] %></h1>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="profile-info">
+            <h3><%= "#{@user.first_name} #{@user.last_name}" %></h3>
+            <p><i class="fas fa-envelope"></i> <%= "#{@user.username}@raf.rs" %></p>
+        </div>
+    </div>
+</div>
+<br>

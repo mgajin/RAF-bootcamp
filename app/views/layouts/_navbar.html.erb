@@ -10,8 +10,13 @@
                 <li class="nav-item"><%= link_to "Courses", courses_path, :class => 'nav-link' %></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                <% if logged_in? %>
+                <li class="nav-item"><%= link_to current_user.username, user_path(current_user.id), :class => 'nav-link' %></li>
+                <li class="nav-item"><%= link_to "Log out", '/logout', method: :delete, :class => 'nav-link' %></li>
+                <% else %>
                 <li class="nav-item"><%= link_to "Log in", '/login', :class => 'nav-link' %></li>
                 <li class="nav-item"><%= link_to "Sign up", new_user_path, :class => 'nav-link' %></li>
+                <% end %>
             </ul>
         </div>
     </div>
