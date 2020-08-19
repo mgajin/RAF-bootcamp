@@ -1,6 +1,5 @@
 <div id="user">
     <div class="bg-img"></div>
-
     <div class="overlay">
         <div class="card">
             <div class="card-body">
@@ -8,17 +7,22 @@
                 <div class="container">
                     <%= form_for :user, url: users_path do |f| %>
                     <div class="row pt-1 pb-1">
-                        <div class="col-12 p-2">
-                            <%= f.label :username %>
-                            <br>
-                            <%= f.text_field(:username, {:class => 'form-control m-0'}) %>
+                        <div class="col-12 col-md-6 p-2">
+                            <%= f.text_field(:first_name, { :placeholder => 'First name', :class => 'form-control' }) %>
+                        </div>
+                        <div class="col-12 col-md-6 p-2">
+                            <%= f.text_field(:last_name, { :placeholder => 'Last name', :class => 'form-control' }) %>
                         </div>
                         <div class="col-12 p-2">
-                            <%= f.label :password %>
-                            <br>
-                            <%= f.password_field(:password, {:class => 'form-control'}) %>
+                            <%= f.text_field(:username, { :placeholder => 'Username', :class => 'form-control' }) %>
                         </div>
-                        <div class="col-12 mt-1 p-2">
+                        <div class="col-12 p-2">
+                            <%= f.password_field(:password, { :placeholder => 'Password', :class => 'form-control' }) %>
+                        </div>
+                        <div class="col-12 p-2">
+                            <p class="text-center m-0">Already have an account? <%= link_to "Login", login_path, :class => 'link' %></p>
+                        </div>
+                        <div class="col-12  p-2">
                             <%= f.submit({:class => 'btn btn-primary'}) %>
                         </div>
                     </div>

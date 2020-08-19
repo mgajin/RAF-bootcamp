@@ -3,10 +3,16 @@
     <div class="overlay">
         <div class="card">
             <div class="card-body">
-                <h1 class="card-title text-center">Log In</h1>
+                <h1 class="card-title text-center">Sign Up</h1>
                 <div class="container">
                     <%= form_for :user, url: users_path do |f| %>
                     <div class="row pt-1 pb-1">
+                        <div class="col-12 col-md-6 p-2">
+                            <%= f.text_field(:first_name, { :placeholder => 'First name', :class => 'form-control' }) %>
+                        </div>
+                        <div class="col-12 col-md-6 p-2">
+                            <%= f.text_field(:last_name, { :placeholder => 'Last name', :class => 'form-control' }) %>
+                        </div>
                         <div class="col-12 p-2">
                             <%= f.text_field(:username, { :placeholder => 'Username', :class => 'form-control' }) %>
                         </div>
@@ -14,9 +20,9 @@
                             <%= f.password_field(:password, { :placeholder => 'Password', :class => 'form-control' }) %>
                         </div>
                         <div class="col-12 p-2">
-                            <p class="text-center m-0">Don't have an account? <%= link_to "Register", signup_path, :class => 'link' %></p>
+                            <p class="text-center m-0">Already have an account? <%= link_to "Login", '/login', :class => 'link' %></p>
                         </div>
-                        <div class="col-12 p-2">
+                        <div class="col-12  p-2">
                             <%= f.submit({:class => 'btn btn-primary'}) %>
                         </div>
                     </div>
@@ -25,4 +31,5 @@
             </div>
         </div>
     </div>
+
 </div>

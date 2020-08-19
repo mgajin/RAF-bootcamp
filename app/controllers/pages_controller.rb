@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
 
+    # skip_before_action :authorized, only: [:index]
+
     def index
         @courses = Course.all
         @professors = Professor.all

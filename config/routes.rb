@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
  
   root 'pages#index', as: 'home'
+  get '/admin' => 'pages#admin', as: 'admin'
 
-  get 'admin' => 'pages#admin', as: 'admin'
-  get 'users/login' => 'users#login', as: 'login'
-  get 'users/signup' => 'users#signup', as: 'signup'
-
-  resources :users
+  resources :users, only: [:show, :new, :create]
   resources :courses
   resources :professors
+
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  delete '/logout' => 'sessions#destroy'
 
 end
