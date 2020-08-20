@@ -10,14 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_19_135102) do
+ActiveRecord::Schema.define(version: 2020_08_20_224100) do
 
   create_table "courses", force: :cascade do |t|
-    t.string "name"
     t.integer "professor_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "subject_id", null: false
     t.index ["professor_id"], name: "index_courses_on_professor_id"
+    t.index ["subject_id"], name: "index_courses_on_subject_id"
   end
 
   create_table "professors", force: :cascade do |t|
@@ -27,22 +28,10 @@ ActiveRecord::Schema.define(version: 2020_08_19_135102) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "ratings", force: :cascade do |t|
-    t.integer "rating"
-    t.integer "user_id", null: false
-    t.integer "professor_id", null: false
+  create_table "subjects", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["professor_id"], name: "index_ratings_on_professor_id"
-    t.index ["user_id"], name: "index_ratings_on_user_id"
-  end
-
-  create_table "reviews", force: :cascade do |t|
-    t.text "body"
-    t.integer "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_reviews_on_user_id"
+    t.string "name"
   end
 
   create_table "users", force: :cascade do |t|
@@ -56,7 +45,5 @@ ActiveRecord::Schema.define(version: 2020_08_19_135102) do
   end
 
   add_foreign_key "courses", "professors"
-  add_foreign_key "ratings", "professors"
-  add_foreign_key "ratings", "users"
-  add_foreign_key "reviews", "users"
+  add_foreign_key "courses", "subjects"
 end
