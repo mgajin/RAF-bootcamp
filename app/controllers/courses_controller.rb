@@ -16,6 +16,7 @@ class CoursesController < ApplicationController
 
     def new
         @course = Course.new
+        @subjects = Subject.all
         @professors = Professor.all
     end
 
@@ -38,8 +39,7 @@ class CoursesController < ApplicationController
         redirect_to admin_path
     end
 
-    private 
-        def course_params
-            params.require(:course).permit(:name)
-        end
+    private def course_params
+        params.require(:course).permit(:name)
+    end
 end

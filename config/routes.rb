@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/admin' => 'pages#admin', as: 'admin'
 
   resources :users, only: [:show, :new, :create]
+  resources :subjects, only: [:show, :new, :create]
   resources :courses
   resources :professors
 
