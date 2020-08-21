@@ -1,7 +1,31 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+# Default database data
 #
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# rake db:drop:all to delete all data
+# rails db:migrate to create database
+# rails db:seed to seed data
+
+subjects = Subject.create([
+    { name: 'Script Languagues' },
+    { name: 'Web Development' },
+    { name: 'Android Development' },
+    { name: 'Object Oriented Programming' },
+    { name: 'C Programming' },
+    { name: 'Operating Systems' },
+    { name: 'Algebra' },
+    { name: 'Machine Learning' },
+    { name: 'Deep Learning' }
+])
+
+professors = Professor.create([
+    { first_name: 'Milos', last_name: 'Radenkovic' },
+    { first_name: 'Milan', last_name: 'Vidakovic' },
+    { first_name: 'Nemanja', last_name: 'Zirojevic' },
+    { first_name: 'Bojana', last_name: 'Dimic' },
+    { first_name: 'Stevan', last_name: 'Milenkovic' },
+    { first_name: 'Jelena', last_name: 'Jovanovic' },
+    { first_name: 'Nemanja', last_name: 'Ilic' }
+])
+
+users = User.create([
+    { first_name: 'Marko', last_name: 'Gajin', username: 'mgajin', password: 'password' }
+])
