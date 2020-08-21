@@ -21,7 +21,7 @@ module SessionsHelper
     end
     
     def authorized
-        redirect_to home_path unless logged_in?
+        redirect_to login_path unless logged_in?
     end
 
     def admin_auth
