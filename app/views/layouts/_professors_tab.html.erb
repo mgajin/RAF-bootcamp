@@ -13,7 +13,7 @@
                         <p class="card-text">
                             Courses:
                             <% professor.courses.each do |course| %>
-                            <%= "#{course.name} " %>
+                            <%= "#{course.subject.name} " %>
                             <% end %>
                         </p>
                     </div>

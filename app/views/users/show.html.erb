@@ -12,6 +12,13 @@
             <h3><%= "#{@user.first_name} #{@user.last_name}" %></h3>
             <p><i class="fas fa-envelope"></i> <%= "#{@user.username}@raf.rs" %></p>
         </div>
+        <ul class="list-group">
+            <% @user.courses.each do |course| %>
+            <li class="list-group-item">
+                <%= link_to "#{course.subject.name}", course_path(course), :class => 'link' %>
+            </li>
+            <% end %>
+        </ul>
     </div>
 </div>
 <br>

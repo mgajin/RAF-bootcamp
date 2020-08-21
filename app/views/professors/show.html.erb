@@ -15,7 +15,7 @@
         <ul class="list-group">
             <% @professor.courses.each do |course| %>
             <li class="list-group-item">
-                <%= link_to "#{course.name}", course_path(course), :class => 'link' %>
+                <%= link_to "#{course.subject.name}", course_path(course), :class => 'link' %>
             </li>
             <% end %>
         </ul>

@@ -7,7 +7,7 @@
                 <p class="card-text">
                     Courses:
                     <% professor.courses.each do |course| %>
-                    <%= "#{course.name} " %>
+                    <%= "#{course.subject.name} " %>
                     <% end %>
                 </p>
                 <%= link_to "About", professor_path(professor), :class => 'btn btn-outline-info' %>

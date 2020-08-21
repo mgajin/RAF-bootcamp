@@ -1,6 +1,9 @@
 class Course < ApplicationRecord
   belongs_to :professor
-  validates :name, presence: true, length: { minimum: 5 }
-  validates :professor, presence: true
-  validates :subject, presence: true
+  belongs_to :subject
+  has_many :subscriptions
+  has_many :users, through: :subscriptions, :dependent => :destroy
+
+  validates :professor_id, presence: true
+  validates :subject_id, presence: true
 end

@@ -1,8 +1,8 @@
 <div class="card">
     <h1 class="course-header"><i class="fas fa-laptop-code"></i></h1>
     <div class="card-body">
-        <h4 class="card-title"><%= @course.name %></h4>
+        <h4 class="card-title"><%= @course.subject.name %></h4>
         <p class="card-text"><%= link_to "#{@course.professor.first_name} #{@course.professor.last_name}", professor_path(@course.professor), :class => 'link' %></p>
-        <button class="btn btn-danger">Save course</button>
+        <%= button_to "Save Course", subscriptions_path, method: :post, params: { course_id: @course.id, user_id: current_user }, class: 'btn btn-danger' %>
     </div>
 </div>

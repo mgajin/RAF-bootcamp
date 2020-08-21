@@ -4,7 +4,7 @@ class CoursesController < ApplicationController
     def index
         @course_name = params[:name] 
         if @course_name
-            @courses = Course.all.select { |course| course.name.include? @course_name }
+            @courses = Course.all.select { |course| course.subject.name.include? @course_name }
         else
             @courses = Course.all            
         end
@@ -21,11 +21,10 @@ class CoursesController < ApplicationController
     end
 
     def create
-        @professors = Professor.all
         @professor = Professor.find(params[:professor_id])
         @course = @professor.courses.create(course_params)
-        
-        if @course
+
+        if @course.save
             redirect_to admin_path
         else 
             render 'new'
@@ -40,6 +39,6 @@ class CoursesController < ApplicationController
     end
 
     private def course_params
-        params.require(:course).permit(:name)
+        params.permit([:subject_id, :professor_id])
     end
 end

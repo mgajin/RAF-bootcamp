@@ -3,7 +3,7 @@
     <div class="col-12 col-md-6 col-lg-4 p-2">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title"><%= course.name %></h5>
+                <h5 class="card-title"><%= course.subject.name %></h5>
                 <p class="card-text">Professor: <%= "#{course.professor.first_name} #{course.professor.last_name}" %></p>
                 <%= link_to "See Course", course_path(course), :class => 'btn btn-outline-danger' %>
             </div>
