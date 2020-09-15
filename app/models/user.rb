@@ -1,6 +1,7 @@
 class User < ApplicationRecord
     has_many :subscriptions
     has_many :courses ,through: :subscriptions, :dependent => :destroy 
+    has_many :reviews
 
     validates :first_name, presence: true
     validates :last_name, presence: true

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :new, :create]
   resources :subscriptions, only: [:create, :destroy]
+  resources :reviews, only: [:index, :create]
   resources :subjects, only: [:show, :new, :create]
   resources :courses, only: [:index, :show, :new, :create, :destroy]
   resources :professors, only: [:index, :show, :new, :create, :destroy]
