@@ -1,0 +1,13 @@
+<h5>Add Review</h5>
+<%= form_for :review, url: course_reviews_path(@course.id) do |f| %>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-1 mb-1">
+                <%= f.text_area(:comment, {:class => 'form-control m-0'}) %>
+            </div>
+            <div class="col-12 mt-1 mb-1">
+                <%= f.submit({:class => 'btn btn-primary'}) %>
+            </div>
+        </div>
+    </div>
+<% end %>

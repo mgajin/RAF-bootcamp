@@ -8,5 +8,20 @@
 </div>
 <br>
 <section class="container">
-    <h2 class="section-title"><i class="fas fa-comments"></i> Comments</h2>
+    <h2 class="section-title"><i class="fas fa-comments"></i> Reviews</h2>
+    <div class="row">
+        <% @course.reviews.each do |review| %>
+            <div class="col-12 col-md-6 p-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= review.comment %></h5>
+                        <p class="card-subtitle"><%= review.user.username %></p>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
+    <br>
+    <%= render 'reviews/form' %>
+    <br>
 </section>

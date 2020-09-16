@@ -1,17 +1,17 @@
 class ReviewsController < ApplicationController
     before_action :authorized 
 
-    def index:
+    def index
+        @reviews = Review.all
     end
 
     def create 
-        @user = User.find(current_user.id)
-        @review = @user.reviews.create(review_params)
+        comment = params[:review][:comment]
+        course_id = params[:course_id]
+        @course = Course.find(course_id)
+        @review = @course.reviews.create({comment: comment, course_id: course_id, user_id: current_user.id})
         @review.save
-    end
-
-    private def review_params
-        params.permit([:comment, :course_id, :user_id])
+        redirect_to course_path(@course)
     end
 
 end
